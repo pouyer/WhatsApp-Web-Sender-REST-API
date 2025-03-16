@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: api_whats_envio-app
+    ports:
+      - "${HOST_PORT:-3000}:3000" # Usa el puerto especificado en HOST_PORT o 3000 por defecto
+    volumes:
+      - .:/usr/src/app
+      - ./logs:/usr/src/app/logs
+      - ./.wwebjs_auth:/usr/src/app/.wwebjs_auth
+      - ./.wwebjs_cache:/usr/src/app/.wwebjs_cache
+      - ./uploads:/usr/src/app/uploads
+    environment:
+      - NODE_ENV=production
+      - PORT=3000 # Puerto interno del contenedor
+    restart: always

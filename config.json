@@ -1,0 +1,7 @@
+{
+  "port": 3000,
+  "logFilePath": "logs/combined.log",
+  "errorLogFilePath": "logs/error.log",
+  "logLevel": "info"
+}
+

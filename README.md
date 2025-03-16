@@ -66,7 +66,11 @@ Envía una solicitud POST al endpoint **` /send-file `**:
 ### Construir y ejecutar el contenedor
 1. Construye la imagen Docker:
 ```
- docker-compose up --build
+  sudo docker-compose up --build
+```
+1.1. Subir la app desde otro puerto diferente al 3000
+```
+ sudo HOST_PORT=4000 docker-compose up --build
 ```
 2. Verifica que el contenedor esté en ejecución:
 ```
@@ -76,6 +80,11 @@ Envía una solicitud POST al endpoint **` /send-file `**:
 ```
 docker logs api_whats_envio-app
 ```
+4. Detener el contenedor
+```
+ sudo docker stop api_whats_envio-app 
+```
+   
 ## Persistencia de datos
 Los siguientes directorios se montan como volúmenes en el contenedor para persistir datos importantes:
 
